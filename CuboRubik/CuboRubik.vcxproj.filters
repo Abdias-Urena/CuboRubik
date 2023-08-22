@@ -21,9 +21,15 @@
     <ClCompile Include="Button.cpp">
       <Filter>Archivos de encabezado</Filter>
     </ClCompile>
+    <ClCompile Include="textArea.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="textArea.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
