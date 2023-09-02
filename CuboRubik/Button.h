@@ -35,6 +35,6 @@ public:
 
 	//Generals Methods
 	void drawMe(sf::RenderWindow&);
-	bool isPressed(sf::Vector2f, int);
+	bool isPressed(sf::Vector2f);
 
 };

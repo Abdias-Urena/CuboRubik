@@ -68,10 +68,9 @@ void Button::setState(int state) {
 	this->state = state;
 }
 
-bool Button::isPressed(sf::Vector2f vec, int state) {
-	if (this->state == 0 && this->shape.getGlobalBounds().contains(vec)) {
+bool Button::isPressed(sf::Vector2f vec) {
+	if (this->shape.getGlobalBounds().contains(vec)) {
 		cout << this->shape.getGlobalBounds().contains(vec);
-		setState(state);
 		return true;
 	}
 	return false;
