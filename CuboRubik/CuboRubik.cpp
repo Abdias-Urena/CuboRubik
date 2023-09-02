@@ -18,6 +18,7 @@ int main()
 	Button buttonPlay;
 	buttonPlay.setShapePosition(559, 320);
 	buttonPlay.setShapeSize(150, 100);
+
 	if (!buttonPlay.isChangeTexture("Buttons/play.png"))
 		cout << "THIS FILE CANNOT OPEN";
 	buttonPlay.setColorShape(sf::Color::White);
@@ -60,6 +61,26 @@ int main()
 						//WINDOW-2
 						win2.create(sf::VideoMode(1300, 700), "Second", sf::Style::Titlebar | sf::Style::Close);
 						win2.setPosition(centerWindow);
+
+						//Probando matriz
+						Button cube[3][3];
+
+						for (int i = 0; i < 3; i++) {
+							for (int j = 0; j < 3; j++) {
+								cube[i][j].setShapePosition(50 + i * 100, 50 + j * 100);
+								cube[i][j].setShapeSize(100, 100);
+								//aleatorio
+								//cube[i][j].setColorShape(sf::Color(rand() % 256, rand() % 256, rand() % 256));
+								cube[0][0].setColorShape(sf::Color::Green);
+								cube[0][1].setColorShape(sf::Color::White);
+								cube[0][2].setColorShape(sf::Color::Blue);
+								cube[1][0].setColorShape(sf::Color::Red);
+								cube[1][1].setColorShape(sf::Color::Yellow);
+								cube[1][2].setColorShape(sf::Color::White);
+								cube[2][2].setColorShape(sf::Color::Blue);
+							}
+						}
+
 						while (win2.isOpen())
 						{
 							sf::Event w;
@@ -68,11 +89,22 @@ int main()
 								switch (w.type) 
 								{
 								case sf::Event::Closed:
-									win2.close();
+									win2.close();	
 									break;
 								}
 							}
-							buttonPlay.drawMe(win2);
+							win2.clear();
+
+							//CUBE draw
+							for (int i = 0; i < 3; i++) {
+								for (int j = 0; j < 3; j++) {
+									cube[i][j].drawMe(win2);
+								}
+							}
+
+
+
+							//buttonPlay.drawMe(win2);
 							win2.display();
 							win2.setActive();
 							win1.setActive(false);
