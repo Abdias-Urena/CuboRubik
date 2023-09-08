@@ -11,12 +11,13 @@ int main()
 		(sf::VideoMode::getDesktopMode().height / 2) - 364);
 
 	//WINDOW-1
-	win1.create(sf::VideoMode(1300, 700), "Play", sf::Style::Titlebar | sf::Style::Close);
+	//1300 700
+	win1.create(sf::VideoMode(1000, 600), "Play", sf::Style::Titlebar | sf::Style::Close);
 	win1.setPosition(centerWindow);
 
 
 	Button buttonPlay;
-	buttonPlay.setShapePosition(559, 320);
+	buttonPlay.setShapePosition(430, 250);
 	buttonPlay.setShapeSize(150, 100);
 	if (!buttonPlay.isChangeTexture("Buttons/play.png"))
 		cout << "THIS FILE CANNOT OPEN";
@@ -58,7 +59,7 @@ int main()
 					if (buttonPlay.isPressed(mousePos)) {
 						sf::RenderWindow win2;
 						//WINDOW-2
-						win2.create(sf::VideoMode(1300, 700), "Second", sf::Style::Titlebar | sf::Style::Close);
+						win2.create(sf::VideoMode(1000, 600), "Second", sf::Style::Titlebar | sf::Style::Close);
 						win2.setPosition(centerWindow);
 						while (win2.isOpen())
 						{
